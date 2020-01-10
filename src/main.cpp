@@ -1,11 +1,11 @@
-#include <main.h>
-#include <Framework/Config.h>
-#include <Framework/Logger.h>
-#include <Framework/Database.h>
-#include <Framework/Framework.h>
-#include <Network/TcpServer.h>
-#include <Network/UdpServer.h>
-#include <Network/HttpServer.h>
+#include "core/main.h"
+#include "core/framework/Config.h"
+#include "core/framework/Logger.h"
+#include "core/framework/Database.h"
+#include "core/framework/Framework.h"
+#include "core/network/TcpServer.h"
+#include "core/network/UdpServer.h"
+#include "core/network/HttpServer.h"
 
 Logger*		debug = NULL;
 Framework*	fw = NULL;

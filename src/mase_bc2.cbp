@@ -5,7 +5,7 @@
 		<Option title="mase_bc2" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Header Files/;Header Files/Network/;Source Files/;Header Files/Framework/;Header Files/Network/;Header Files/Framework/;Source Files/Framework/;Header Files/Framework/;Source Files/;Header Files/Network/Http/;Header Files/Network/Socket/;Source Files/;Source Files/;Source Files/Network/;Source Files/Network/Http/;Source Files/Network/Socket/;" />
+		<Option virtualFolders="Header Files/;Header Files/network/;Source Files/;Header Files/framework/;Header Files/network/;Header Files/framework/;Source Files/framework/;Header Files/framework/;Source Files/;Header Files/network/http/;Header Files/network/Socket/;Source Files/;Source Files/;Source Files/network/;Source Files/network/http/;Source Files/network/Socket/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/mase_bc2" prefix_auto="1" extension_auto="1" />
@@ -49,115 +49,115 @@
 			<Option virtualFolder="Source Files/" />
 		</Unit>
 		<Unit filename="source/Base64.cpp">
-			<Option virtualFolder="Source Files/Network/" />
+			<Option virtualFolder="Source Files/network/" />
 		</Unit>
 		<Unit filename="source/Base64.h">
-			<Option virtualFolder="Header Files/Network/" />
+			<Option virtualFolder="Header Files/network/" />
 		</Unit>
-		<Unit filename="source/Framework/Config.cpp">
-			<Option virtualFolder="Source Files/Framework/" />
+		<Unit filename="source/framework/Config.cpp">
+			<Option virtualFolder="Source Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Config.h">
-			<Option virtualFolder="Header Files/Framework/" />
+		<Unit filename="source/framework/Config.h">
+			<Option virtualFolder="Header Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Database.cpp">
-			<Option virtualFolder="Source Files/Framework/" />
+		<Unit filename="source/framework/Database.cpp">
+			<Option virtualFolder="Source Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Database.h">
-			<Option virtualFolder="Header Files/Framework/" />
+		<Unit filename="source/framework/Database.h">
+			<Option virtualFolder="Header Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Framework.cpp">
-			<Option virtualFolder="Source Files/Framework/" />
+		<Unit filename="source/framework/Framework.cpp">
+			<Option virtualFolder="Source Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Framework.h">
-			<Option virtualFolder="Header Files/Framework/" />
+		<Unit filename="source/framework/Framework.h">
+			<Option virtualFolder="Header Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/GameClient.cpp">
-			<Option virtualFolder="Source Files/Framework/" />
+		<Unit filename="source/framework/GameClient.cpp">
+			<Option virtualFolder="Source Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/GameClient.h">
-			<Option virtualFolder="Header Files/Framework/" />
+		<Unit filename="source/framework/GameClient.h">
+			<Option virtualFolder="Header Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/GameServer.cpp">
-			<Option virtualFolder="Source Files/Framework/" />
+		<Unit filename="source/framework/GameServer.cpp">
+			<Option virtualFolder="Source Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/GameServer.h">
-			<Option virtualFolder="Header Files/Framework/" />
+		<Unit filename="source/framework/GameServer.h">
+			<Option virtualFolder="Header Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Logger.cpp">
-			<Option virtualFolder="Source Files/Framework/" />
+		<Unit filename="source/framework/Logger.cpp">
+			<Option virtualFolder="Source Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Logger.h">
-			<Option virtualFolder="Header Files/Framework/" />
+		<Unit filename="source/framework/Logger.h">
+			<Option virtualFolder="Header Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Stats.cpp">
-			<Option virtualFolder="Source Files/Framework/" />
+		<Unit filename="source/framework/Stats.cpp">
+			<Option virtualFolder="Source Files/framework/" />
 		</Unit>
-		<Unit filename="source/Framework/Stats.h">
-			<Option virtualFolder="Header Files/Framework/" />
+		<Unit filename="source/framework/Stats.h">
+			<Option virtualFolder="Header Files/framework/" />
 		</Unit>
-		<Unit filename="source/Network/Http/HttpConnection.cpp">
-			<Option virtualFolder="Source Files/Network/Http/" />
+		<Unit filename="source/network/http/HttpConnection.cpp">
+			<Option virtualFolder="Source Files/network/http/" />
 		</Unit>
-		<Unit filename="source/Network/Http/HttpConnection.h">
-			<Option virtualFolder="Header Files/Network/Http/" />
+		<Unit filename="source/network/http/HttpConnection.h">
+			<Option virtualFolder="Header Files/network/http/" />
 		</Unit>
-		<Unit filename="source/Network/Http/Reply.cpp">
-			<Option virtualFolder="Source Files/Network/Http/" />
+		<Unit filename="source/network/http/Reply.cpp">
+			<Option virtualFolder="Source Files/network/http/" />
 		</Unit>
-		<Unit filename="source/Network/Http/Reply.h">
-			<Option virtualFolder="Header Files/Network/Http/" />
+		<Unit filename="source/network/http/Reply.h">
+			<Option virtualFolder="Header Files/network/http/" />
 		</Unit>
-		<Unit filename="source/Network/Http/RequestHandler.cpp">
-			<Option virtualFolder="Source Files/Network/Http/" />
+		<Unit filename="source/network/http/RequestHandler.cpp">
+			<Option virtualFolder="Source Files/network/http/" />
 		</Unit>
-		<Unit filename="source/Network/Http/RequestHandler.h">
-			<Option virtualFolder="Header Files/Network/Http/" />
+		<Unit filename="source/network/http/RequestHandler.h">
+			<Option virtualFolder="Header Files/network/http/" />
 		</Unit>
-		<Unit filename="source/Network/Http/RequestParser.cpp">
-			<Option virtualFolder="Source Files/Network/Http/" />
+		<Unit filename="source/network/http/RequestParser.cpp">
+			<Option virtualFolder="Source Files/network/http/" />
 		</Unit>
-		<Unit filename="source/Network/Http/RequestParser.h">
-			<Option virtualFolder="Header Files/Network/Http/" />
+		<Unit filename="source/network/http/RequestParser.h">
+			<Option virtualFolder="Header Files/network/http/" />
 		</Unit>
-		<Unit filename="source/Network/HttpServer.cpp">
-			<Option virtualFolder="Source Files/Network/Socket/" />
+		<Unit filename="source/network/HttpServer.cpp">
+			<Option virtualFolder="Source Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/HttpServer.h">
-			<Option virtualFolder="Header Files/Network/Socket/" />
+		<Unit filename="source/network/HttpServer.h">
+			<Option virtualFolder="Header Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/Packet.cpp">
-			<Option virtualFolder="Source Files/Network/" />
+		<Unit filename="source/network/Packet.cpp">
+			<Option virtualFolder="Source Files/network/" />
 		</Unit>
-		<Unit filename="source/Network/Packet.h">
-			<Option virtualFolder="Header Files/Network/" />
+		<Unit filename="source/network/Packet.h">
+			<Option virtualFolder="Header Files/network/" />
 		</Unit>
-		<Unit filename="source/Network/TcpConnection.cpp">
-			<Option virtualFolder="Source Files/Network/Socket/" />
+		<Unit filename="source/network/TcpConnection.cpp">
+			<Option virtualFolder="Source Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/TcpConnection.h">
-			<Option virtualFolder="Header Files/Network/Socket/" />
+		<Unit filename="source/network/TcpConnection.h">
+			<Option virtualFolder="Header Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/TcpConnectionSSL.cpp">
-			<Option virtualFolder="Source Files/Network/Socket/" />
+		<Unit filename="source/network/TcpConnectionSSL.cpp">
+			<Option virtualFolder="Source Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/TcpConnectionSSL.h">
-			<Option virtualFolder="Header Files/Network/Socket/" />
+		<Unit filename="source/network/TcpConnectionSSL.h">
+			<Option virtualFolder="Header Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/TcpServer.cpp">
-			<Option virtualFolder="Source Files/Network/Socket/" />
+		<Unit filename="source/network/TcpServer.cpp">
+			<Option virtualFolder="Source Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/TcpServer.h">
-			<Option virtualFolder="Header Files/Network/Socket/" />
+		<Unit filename="source/network/TcpServer.h">
+			<Option virtualFolder="Header Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/UdpServer.cpp">
-			<Option virtualFolder="Source Files/Network/Socket/" />
+		<Unit filename="source/network/UdpServer.cpp">
+			<Option virtualFolder="Source Files/network/Socket/" />
 		</Unit>
-		<Unit filename="source/Network/UdpServer.h">
-			<Option virtualFolder="Header Files/Network/Socket/" />
+		<Unit filename="source/network/UdpServer.h">
+			<Option virtualFolder="Header Files/network/Socket/" />
 		</Unit>
 		<Unit filename="source/SSL_cert.h">
-			<Option virtualFolder="Header Files/Network/" />
+			<Option virtualFolder="Header Files/network/" />
 		</Unit>
 		<Unit filename="source/main.h">
 			<Option virtualFolder="Header Files/" />
