@@ -63,7 +63,7 @@ With that being said though, if you do change something in the code and release 
 Last but not least, you may be wondering why I didn't include the source code for the hook.
 The answer is simply because I don't think anything new would come out of it, the already implemented features should be more than enough to play around with and as far as I can tell there should be no bugs left (that could be fixed in the hook).
 But if you are concerned about there being some "malicious" code in it, I can only assure you that the code is free from such things.
-And if you don't believe me feel free not to use it, the hook is just meant as a bonus anyway and you can always do the required modifications yourself to redirect the game client/server to the emulator (as described in section A, point 3, b)
+And if you don't believe me feel free not to use it, the hook is just meant as a bonus anyway and you can always do the required modifications yourself to redirect the game client/server to the emulator.
 
 
 
@@ -114,7 +114,7 @@ And if you don't believe me feel free not to use it, the hook is just meant as a
 [ADD] customizable TOS which is stored in ".\templates\termsOfService" (original TOS is in termsOfService_orig, to use it replace the files)
 [ADD] dinput8.dll for the Client and Servers which makes the hosts and lpatch modifications obsolete, 
 this file is NOT required by the emulator and must be put into the client/server root directory to make use of it,
-root directory is where the "BFBC2Game.exe"/"Frost.Game.Main_Win32_Final.exe" is located, see F.A.Q. section for more info
+root directory is where the "BFBC2Game.exe"/"Frost.Game.Main_Win32_Final.exe" is located.
 [ADD] check if the required subdirectories of the emulator ('database' and 'templates') are present
 [ADD] check if the user who wants to delete a persona really is the owner of that persona
 [FIXED] a possible ID mess up when removing personas
@@ -200,7 +200,7 @@ this will also prevent that users can login with the server accounts (this is no
 [STATUS] rewrote the source code from scratch, only the SSL certificate, packet header encoding/decoding and base64 code remain untouched,
 Packet class has a much better performance, Stats are more reliable and the overall stability has much improved (especially when (multiple) Clients are joining a Server)
 [ADD] Ping and Memcheck mechanism for both Clients and Servers and for each of their connections (Theater and Plasma, Memcheck only for Plasma)
-[ADD] colors to the console to differentiate between client and servers and plasma and theater of each one (see F.A.Q section for color reference)
+[ADD] colors to the console to differentiate between client and servers and plasma and theater of each one.
 [FIXED] some important packets that had the wrong content in it and sometimes caused unexpected results (crashes, disconnections, etc)
 [FIXED] the log file writing, now it is not only much more reliable but also it should be guaranteed that everything gets written into the file before a quit/crash
 [FIXED] the structure of the data that gets sent to the client/(game)server, it is now exactly like EA's packet structure
