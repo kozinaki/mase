@@ -1,161 +1,13 @@
 ==============================
  INDEX OF README FOR MASE:BC2
 ==============================
-A. INSTALLATION
-B. F.A.Q.
-C. KNOWN BUGS
-D. SOURCE CODE
-E. CHANGELOG
-F. CREDITS
-
-
-
-=================
- A. INSTALLATION
-=================
-
-1. Requirements:
-----------------
-Windows: ensure that you have the Microsoft Visual C++ 2010 SP1 Redistributable Package installed (download link: http://www.microsoft.com/en-us/download/details.aspx?id=8328)
-Linux: additional requirements may vary on the distribution you are using so I can't give any general advice here (worked out of the box on Ubuntu 12.04.5 32-bit)
-
-Also I only support legit Client files that are patched up to the latest patch R11 (download link: http://www.gamefront.com/files/20808336/Battlefield__Bad_Company_2_Client_Patch_R11), anything below, modified or "cracked" is unsupported
-Regarding the Server files, the only ones that got tested were the R25, R30, R32 and R34 versions (unmodified), anything other may work but is unsupported
-Any existing modifications to the client/server (like the Nexus hook) are also not supported and will probably not work.
-
-
-2. Setup of the emulator:
--------------------------
-Setup is pretty straightforward, ensure that the required ports are open (see F.A.Q.), write the IP (or hostname) of the PC where the emulator will be hosted in the config.ini to the key 'emulator_ip' (overwrite "REPLACE_ME") and save it
-
-Windows: Start the mase_bc2.exe, now Clients and Servers should be able to connect
-Linux: 
-a) If you are in a desktop environment:
-Simply double clicking the "mase_bc2" would launch the emulator in background so you can't really see whats happening
-To "properly" launch the emulator, start up a terminal and do b)
-
-b) If you are in the console/terminal:
-Change the current directory to the one where the file "mase_bc2" is located (which should be in the "linux" folder), then launch the emulator with "./mase_bc2"
-If you launch the emulator from somewhere else, it assumes that all the required files are in the directory where you are now (and if they don't exist, it'll try to create them there), so make sure you are in the right directory
-
-If the emulator fails to start for some reason it should give some kind of error message which you can either send to me or (preferably) try to solve it yourself since they are in most cases pretty self-explanatory
-Should you get something like "Access to a socket failed due to restricted access rights" ensure that the required ports are open and try to set 'http_enabled' to 'false' in the config.ini if it isn't already
-Should you get something like "Error: resolve: No such file or directory" ensure that the hostname you specified in the config.ini is correct and reachable
-
-
-3. Setup for connecting Clients/Servers:
-----------------------------------------
-There are 2 different methods you can choose from to set them up:
-
-a) Using the dinput8.dll hook which comes with this emulator:
-Simply put the "bfbc2.ini" and "dinput8.dll" files from the 'dll' folder in the root directory of the Client/Server (where the executable is located) and replace "REPLACE_ME" in the bfbc2.ini where the host key is to the IP of the PC where the emulator is hosted
-
-b) Manually modifying the binaries and redirect the IP's over the hosts file:
-First remove the SLL verification of the executable by using the lame patcher tool (http://aluigi.altervista.org/mytoolz/lpatch.zip) with the fesl patch (http://aluigi.altervista.org/patches/fesl.lpatch)
-Then append these lines to your hosts file of the System, usually loacated in "C:\Windows\System32\drivers\etc\" for Windows:
- # redirect client ip's
- xxx bfbc2-pc.fesl.ea.com
- xxx bfbc2-pc.theater.ea.com
- # redirect server ip's
- xxx bfbc2-pc-server.fesl.ea.com
- xxx bfbc2-pc-server.theater.ea.com
- # optional
- xxx easo.ea.com
-
-Where 'xxx' stands for the IP of the PC that hosts the emulator.
-
-
-4. Connect to the Emulator:
----------------------------
-If you did all the above steps correctly, the Server should be able to connect flawlessly once you start its executable and should show up in the Client's server list after a few seconds
-In the Client you should be able to login and create an account (nothing shorter than 3 characters and longer than 32 for user name or 16 characters for persona name)
-
-
-
-=====================================
- B. F.A.Q. (only for latest version)
-=====================================
-
-[Q] The Client still wants me to enter a serial number, what should I do?
-[A] That means you are still connected to EA and not the emulator so you probably did something wrong when installing the hook
-If you are using my hook, check if you pasted the dinput8.dll in the correct directory (the same where the BFBC2Game.exe is), if the key "host" in the bfbc2.ini has a correct IP and connect_to_retail is set to 0
-
-[Q] What ports do I need to enable on my firewall/router for the emulator to work?
-[A] You will need to open the TCP ports 18390, 18399, 19021 and 19026 (optionally 9946 but not required)
-
-[Q] How do I unlock everything for my persona?
-[A] Simply create your account/persona, logout and replace the newly created .cfg file of your persona in the database folder of the emulator with the "stats_unlocked" file in the templates folder of the emulator
-This will unlock everything for that persona except SPECACT player models, the M1 Garand and the Vietnam expansion. To unlock those too you have to close the emulator and set "all_are_veteran", "vietnam_for_all" and "specact_for_all" to "true" in the config.ini (only global unlock possible for those)
-
-[Q] How do I unlock everything for everyone?
-[A] Set "all_stats_unlocked" to "true" in the config.ini and all newly created personas will have every weapon unlocked except SPECACT player models, the M1 Garand and the Vietnam expansion.
-To unlock those too you have to close the emulator and set "all_are_veteran", "vietnam_for_all" and "specact_for_all" to "true" in the config.ini (only global unlock possible for those)
-
-[Q] How do I enable "Remember Password"/"Auto-Login" in the client for my account?
-[A] "Remember Password" works out of the box (except in the "Create Account" window, its just useless there), just enter a valid account name and password, select the "Remember Password" box, click "Login" and login with a persona (you must fully login, otherwise it won't be saved)
-"Auto-Login" requires you to first login with the "Remember Password" box checked BUT NOT the "Auto-Login" box selected. When you are logged in, log out do the login again BUT this time SELECT the "Auto-Login" box
-Once you are logged in and want to quit the game, DO NOT hit the "Logout" button (otherwise the Client won't save the setting), just click directly on "Exit Game" (the whole "Auto-Login" process happens strictly within the Client so no chance for a patch or a fix unless DICE does it)
-
-[Q] The Server still connects to EA (and not to the emulator) even though I properly set up the dinput8.dll hook of yours, whats the problem?
-[A] First check if you pasted the dinput8.dll in the correct directory (the same where the Frost.Game.Main_Win32_Final.exe is), if the key "host" in the bfbc2.ini has a correct IP and connect_to_retail is set to 0
-Then make sure that the server is started without parameters like "-feslhost xxx" or "-theaterhost xxx", those will overwrite the IP of the hook! These parameters could be included in some .bat file you are using to launch the server or in the Win32Game.cfg of the server directory, 
-just remove them if they are there
-
-[Q] How do I enable logging for the game server/emulator?
-[A] For the game server you simply have to start it up with the parameter "-plasmaServerLog 1"
-For the emulator you have to set "log_create = true" and "file_log_level = 3" (optionally "display_database_table_info = true") in the config.ini of the emulator
-When you are done with logging close the game server/emulator and you will find a new .log file in their directories which you can investigate or send to me
-
-[Q] The Client won't let me create a new User/Persona, what is the problem?
-[A] Be sure to use a user name (and password!) that consists of at least 3 characters and that there are no special characters in the name (including space)
-Also the User name shouldn't be longer than 32 characters and the Persona name not longer than 16 characters
-
-[Q] What IP do I need to set for the 'emulator_ip'/'host' in the config.ini/bfbc2.ini?
-[A] The network IP of the server where you want your emulator to run, for example you want to run it on your PC which has the IP 192.168.0.3 in the LAN network, 
-you put it in the option for the emulator (config.ini) and others will be able to connect
-As for the connecting clients (bfbc2.ini) you have to put in again the IP where the emulator runs, for the above example this would be again 192.168.0.3 (note that the clients must be in the same network and that every client who wants to connect to the emulator must have this IP)
-
-[Q] Will the emulator automatically apply the options if they are changed in the config.ini or do I have to restart the emulator for that?
-[A] Unfortunately you'll have to restart the emulator for that, dynamic changes were never planned and could be difficult to implement
-
-[Q] How do I transfer users/personas from a previous version or the windows/linux version of mase_bc2?
-[A] The files are compatible since the first public release of the beta so you just have to copy&paste the "database" folder from the old emulator directory to the new one
-If you want to move the users/personas from Windows to Linux or vice versa you just have to resave all the files in the "database" folder with the proper line endings ("carriage return+line feed" for Windows, "line feed" for Linux)
-
-[Q] What do the different colors in the console mean (assuming they are enabled)?
-[A] They stand for the different types of connections and places where the message came from so you can easily differentiate between them,
-red background means it's a warning or an error (but thats included in the message anyway for the logfile), here is the complete list for reference:
-Grey:		Debug (this means it's something local, mostly config, file creation/deletion and initialization stuff)
-White:		Database stuff (information about what happens in the database)
-Green:		Game Servers (theaterhost)
-Turquoise:	Game Servers (feslhost)
-Pink:		Game Client (theaterhost)
-Yellow: 	Game Client (feslhost)
-Aqua:		HTTP requests (coming only from the Game Client)
-Ocher:		Game Client (miscellaneous stuff from the Game Client)
-Red: 		Some unknown stuff, this should actually never occur in normal use (the font is black here if it is displayed as a warning)
-
-[Q] The there are too many messages appearing in the window, can I somehow reduce this but still know whats going on?
-[A] You can limit the character length of one message by setting the according option in the config.ini and/or you can change the message levels,
-I recommend the warning levels to be set to 2 and generally the file notifications and warnings one level higher as the console,
-all lower level messages are included in the higher levels so you don't need to worry about missing something,
-generally the warning/notification levels are set up like this:
-0 = basically only initialization message is shown
-1 = mostly only messages about connecting clients and servers are displayed, I recommend to use this for normal use if you dont try to debug anything
-2 = all the moreless important packets are displayed, in and outgoing so this is a good thing if you only want to check traffic
-3 = basically all database and http related things are displayed here, this is best for debugging
-
-[Q] Why is http disabled in the config.ini and bfbc2.ini and what advantage does it have to enable it?
-[A] On some systems the access to the http socket is not possible (at least not without changing some other settings) so the emulator might not intialize correctly (or at all) with http enabled
-You can try out if it works on your system though, simply set "http_enabled" to "true" in the config.ini and start the emulator, if no warnings appear you are fine
-If you are able to run the emulator with http enabled all Clients that are connection to the emulator can enable their "RerouteHttp" option in the bfbc2cfg.ini (on Servers this is not used)
-Doing so might lead to faster login times and a custom main menu message (totally worth it :p ) which is located in ".\mase_bc2\templates\game"
-However if you don't have http enabled on the emulator but on the connecting Client you will probably experience an extremely long login time so I don't recommend to do this
-
-
+A. KNOWN BUGS
+B. SOURCE CODE
+C. CHANGELOG
+D. CREDITS
 
 ===============
- C. KNOWN BUGS
+ A. KNOWN BUGS
 ===============
 
 [B] Friend system does not work
@@ -179,7 +31,7 @@ However if you don't have http enabled on the emulator but on the connecting Cli
 
 
 ================
- E. SOURCE CODE
+ B. SOURCE CODE
 ================
 
 Requirements:
@@ -216,7 +68,7 @@ And if you don't believe me feel free not to use it, the hook is just meant as a
 
 
 ==============
- D. CHANGELOG
+ C. CHANGELOG
 ==============
 
 ### Beta 0.9
@@ -460,7 +312,7 @@ recommandable values are between 1000 and 3500 for default font (Tahoma, 14)
 
 
 ============
- E. CREDITS
+ D. CREDITS
 ============
 Developers (Emulator+Hook):
 - Triver
