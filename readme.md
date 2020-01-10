@@ -1,13 +1,6 @@
-==============================
- INDEX OF README FOR MASE:BC2
-==============================
-A. KNOWN BUGS
-B. CREDITS
 
+   SOURCE CODE
 ================
- A. SOURCE CODE
-================
-
 Requirements:
 -------------
 - Visual Studio 2010 or higher (Windows), gcc 4.7 or higher (Linux)
@@ -40,8 +33,7 @@ But if you are concerned about there being some "malicious" code in it, I can on
 And if you don't believe me feel free not to use it, the hook is just meant as a bonus anyway and you can always do the required modifications yourself to redirect the game client/server to the emulator.
 
 
-============
- C. CREDITS
+   CREDITS
 ============
 Developers (Emulator+Hook):
 - Triver
