@@ -1,3 +1,5 @@
+    Thats not mine sources. But I want revive this emu.
+
 
    SOURCE CODE
 ================
@@ -15,7 +17,7 @@ Usage:
 - [Linux] mase_bc2.cbp for C::B (should also be possible to generate a makefile from it)
 - To be able to properly build it you'll need to change the Include and Linker directories in the project settings first, replace all occurrences of "$(BOOST_1_54_DIR)" and "$(OPEN_SSL_DIR)" with the locations where you installed these libraries
 
-Final Notes:
+Final Notes(from previous developer):
 ------------
 I have written ~95% of the code myself (regarding the source files that I included here, code from the external libraries doesn't count of course), the rest I either copied 1:1 or just slightly modified it for my needs.
 The according code sections in the files are:
