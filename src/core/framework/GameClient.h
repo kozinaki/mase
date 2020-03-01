@@ -1,5 +1,5 @@
 #pragma once
-#include "../main.h"
+#include "../app.h"
 #include "../network/Packet.h"
 #include "Stats.h"
 #include "Database.h"

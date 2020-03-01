@@ -1,0 +1,119 @@
+cmake_minimum_required(VERSION 3.15)
+project(mase)
+
+set(DBoost_USE_STATIC_LIBS ON)
+set(CMAKE_CXX_STANDARD 14)
+set(BOOST_ROOT "~/dvlpmnt/boost/")
+set(BOOSTROOT "~/dvlpmnt/boost/")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=gnu++11")
+
+find_package(Boost COMPONENTS filesystem system REQUIRED)
+
+if (Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+    add_executable(BoostTesting main.cpp)
+    target_link_libraries(BoostTesting ${Boost_LIBRARIES})
+endif ()
+
+boost
+
+include_directories(~/dvlpmnt/openssl/include)
+set(myDesiredRootForHeaderFileSearch ${CMAKE_SOURCE_DIR}/core)
+file(GLOB my_include_directories ${myDesiredRootForHeaderFileSearch})
+message(${my_include_directories})
+include_directories(${my_include_directories})
+
+file(GLOB_RECURSE CPP_FILES *.cpp)
+set(SOURCE_FILES ${CPP_FILES})
+
+add_executable(mase ${SOURCE_FILES})
+
+
+cmake_minimum_required(VERSION 3.15)
+project(mase)
+
+set(CMAKE_CXX_STANDARD 14)
+set(BOOST_ROOT "~/dvlpmnt/booster/")
+set(BOOSTROOT "~/dvlpmnt/booster/")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+
+find_package(Boost REQUIRED COMPONENTS filesystem system random context)
+IF (Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIR})
+endif()
+
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+message(${CMAKE_BINARY_DIR})
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+include_directories(~/dvlpmnt/openssl/include)
+set(myDesiredRootForHeaderFileSearch ${CMAKE_SOURCE_DIR}/core)
+message(${CMAKE_SOURCE_DIR})
+file(GLOB my_include_directories ${myDesiredRootForHeaderFileSearch})
+message(${my_include_directories})
+include_directories(${my_include_directories})
+
+file(GLOB_RECURSE CPP_FILES *.cpp)
+set(SOURCE_FILES ${CPP_FILES})
+
+add_executable(mase ${SOURCE_FILES})
+
+target_link_libraries(
+        mase
+        ${Boost_LIBRARIES}
+)
+
+
+file(GLOB_RECURSE CPP_FILES *.cpp)
+set(SOURCE_FILES ${CPP_FILES})
+message(${CPP_FILES})
+
+include_directories(~/dvlpmnt/env/openssler/openssl/include)
+include_directories("~/dvlpmnt/env/openssler/local/ssl")
+include_directories("~/dvlpmnt/env/openssler/openssl/lib")
+include_directories("~/dvlpmnt/env/openssl/ssl")
+
+
+-I ~/dvlpmnt/boost -lboost_system-mt -lboost_thread-mt -DBoost_USE_STATIC_LIBS=ON
+
+-------------------------------------------------------------------------------------FINAL
+
+cmake_minimum_required(VERSION 3.15)
+project(mase)
+
+set(CMAKE_CXX_STANDARD 14)
+set(BOOST_ROOT "~/dvlpmnt/env/booster")
+set(BOOSTROOT "~/dvlpmnt/env/booster")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+
+find_package(Boost REQUIRED COMPONENTS filesystem system random context)
+IF (Boost_FOUND)
+    message(${Boost_INCLUDE_DIR})
+    include_directories(${Boost_INCLUDE_DIR})
+endif()
+
+set(OPENSSL_ROOT_DIR "~/dvlpmnt/env/openssler/local/ssl")
+set(OPENSSL_SSL_LIBRARY "~/dvlpmnt/env/openssl/ssl")
+set(OPENSSL_INCLUDE_DIR "~/dvlpmnt/env/openssler/openssl/include")
+set(OPENSSL_CRYPTO_LIBRARY "~/dvlpmnt/env/openssler/openssl/lib")
+
+find_package(OpenSSL REQUIRED COMPONENTS Crypto SSL)
+IF (OpenSSL_FOUND)
+    message(${OPENSSL_ROOT_DIR})
+    include_directories(${OPENSSL_INCLUDE_DIR})
+    include_directories(${OPENSSL_ROOT_DIR})
+    include_directories(${OPENSSL_CRYPTO_LIBRARY})
+    include_directories(${OPENSSL_SSL_LIBRARY})
+endif()
+
+set(myDesiredRootForHeaderFileSearch ${CMAKE_SOURCE_DIR}/core)
+message(${CMAKE_SOURCE_DIR})
+file(GLOB my_include_directories ${myDesiredRootForHeaderFileSearch})
+message(${my_include_directories})
+include_directories(${my_include_directories})
+
+file(GLOB_RECURSE CPP_FILES *.cpp)
+set(SOURCE_FILES ${CPP_FILES})
+message(${CPP_FILES})
+
+add_executable(mase ${CPP_FILES})

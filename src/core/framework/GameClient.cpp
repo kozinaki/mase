@@ -525,7 +525,7 @@ bool GameClient::acct(list<Packet*>* queue, Packet* packet, string txn, const ch
 			token = "127.0.0.1";
 		token.append(",");
 		token.append(fw->portsCfg().emulator_port);
-		token.append(",enUS,^Ù™¨Üœ·Æ¤¤‰“Êÿ…²ÑÃÖ¬Œ±ïÄ±¡‚†Œ²°Äİ±–†Ì›áî°¡‚†Œ˜°àÀƒ†Ì²¹Ê‰»ƒ¦˜–Å‚ŠÔ©Ñ©¯„™’´ÈŒ–±äà³†Œ˜°îÀáÒÌÛªÓ€");
+		token.append(",enUS,^Ù™ï¿½Üœï¿½Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¬ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ±ï¿½ï¿½Ì›ï¿½î°¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì²ï¿½Ê‰ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½Ô©Ñ©ï¿½ï¿½ï¿½ï¿½ï¿½ÈŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÛªÓ€");
 		token = base64_encode(reinterpret_cast<const unsigned char*>(token.c_str()), token.size());
 		while((pos = token.find('=', token.size()-9)) != string::npos)		// bring string into proper format again
 			token.replace(pos, 1, "%3d");

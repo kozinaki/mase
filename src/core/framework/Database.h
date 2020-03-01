@@ -1,5 +1,5 @@
 #pragma once
-#include "../main.h"
+#include "../app.h"
 #include <vector>
 #ifndef _WIN32
 	#include <list> // linux

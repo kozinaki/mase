@@ -1,4 +1,4 @@
-#include "../main.h"
+#include "../app.h"
 #include <boost/asio/ssl.hpp>
 #include "Packet.h"
 #include "../framework/GameClient.h"

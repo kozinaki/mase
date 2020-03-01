@@ -1,4 +1,4 @@
-#include "../../main.h"
+#include "../../app.h"
 #include <boost/array.hpp>
 #include "Reply.h"
 #include "RequestHandler.h"

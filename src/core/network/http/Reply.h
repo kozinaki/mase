@@ -1,5 +1,5 @@
 #pragma once
-#include "../../main.h"
+#include "../../app.h"
 
 /// A reply to be sent to a client.
 struct reply{

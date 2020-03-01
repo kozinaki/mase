@@ -1,5 +1,5 @@
 #pragma once
-#include "../main.h"
+#include "../app.h"
 #include "Packet.h"
 #include "../framework/GameClient.h"
 #include "../framework/GameServer.h"

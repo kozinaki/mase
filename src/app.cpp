@@ -1,4 +1,4 @@
-#include "core/main.h"
+#include "core/app.h"
 #include "core/framework/Config.h"
 #include "core/framework/Logger.h"
 #include "core/framework/Database.h"
