@@ -41,7 +41,26 @@ IF (Boost_FOUND)
             src/core/network/HttpServer.h
             src/core/network/Packet.cpp
             src/core/network/Packet.h
+            src/core/network/TcpConnection.cpp
+            src/core/network/TcpConnectionSSL.h
+            src/core/network/TcpConnection.h
+            src/core/network/TcpConnectionSSL.cpp
+            src/core/network/TcpServer.h
+            src/core/network/TcpServer.cpp
             src/core/network/UdpServer.cpp
             src/core/network/UdpServer.h)
     target_link_libraries(mase ${Boost_LIBRARIES})
+endif()
+
+set(OPENSSL_ROOT_DIR "~/dvlpmnt/env/ssl")
+
+find_package(OpenSSL REQUIRED COMPONENTS Crypto SSL)
+IF (OpenSSL_FOUND)
+    message(${OPENSSL_ROOT_DIR})
+    message(${OPENSSL_INCLUDE_DIR})
+    message(${OPENSSL_CRYPTO_LIBRARY})
+    message(${OPENSSL_SSL_LIBRARY})
+    include_directories(${OPENSSL_INCLUDE_DIR})
+    target_link_libraries(mase ${OPENSSL_CRYPTO_LIBRARY})
+    target_link_libraries(mase ${OPENSSL_SSL_LIBRARY})
 endif()
