@@ -55,3 +55,11 @@ Special Thanks:
 - Domo and Freaky123 (for sharing the Server Files and the v10.0 source code)
 - Aluigi (for the tools that made it possible to view and record the BF:BC2 network traffic)
 - DICE (for making the game)
+
+https://www.boost.org/users/history/version_1_71_0.html
+./bootstrap.sh && ./b2 install --prefix=/home/user/myproject/lib/boosted
+
+https://github.com/openssl/openssl/releases/tag/OpenSSL_1_0_2u
+./config --prefix=/home/user/myproject/lib/ssl --openssldir=/home/user/myproject/lib/openssldir shared && make && make test && make install
+or
+./config enable-ssl3 enable-ssl2 --prefix=/home/user/myproject/lib/ssl --openssldir=/home/user/myproject/lib/openssldir shared && make && make test && make install
