@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.15)
 project(mase)
 
 set(CMAKE_CXX_STANDARD 14)
-set(BOOST_ROOT "~/dvlpmnt/env/booster")
-set(BOOSTROOT "~/dvlpmnt/env/booster")
+set(BOOST_ROOT "~/prjcz/env/boosted")
+set(BOOSTROOT "~/prjcz/env/boosted")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
 find_package(Boost REQUIRED COMPONENTS filesystem system random context)
@@ -52,7 +52,7 @@ IF (Boost_FOUND)
     target_link_libraries(mase ${Boost_LIBRARIES})
 endif()
 
-set(OPENSSL_ROOT_DIR "~/dvlpmnt/env/ssl")
+set(OPENSSL_ROOT_DIR "~/prjcz/env/ssl")
 
 find_package(OpenSSL REQUIRED COMPONENTS Crypto SSL)
 IF (OpenSSL_FOUND)
@@ -64,3 +64,16 @@ IF (OpenSSL_FOUND)
     target_link_libraries(mase ${OPENSSL_CRYPTO_LIBRARY})
     target_link_libraries(mase ${OPENSSL_SSL_LIBRARY})
 endif()
+
+
+#[[
+FOR BUILD BOOST
+    ./bootstrap.sh && ./b2 install --prefix=~/env/boosted
+
+FOR BUILD OPENSSL
+    ./config --prefix=~/env/ssl --openssldir=~/env/openssldir shared
+        && make && make test && make install
+With enable ssl3 and ssl2
+    ./config enable-ssl3 enable-ssl2 --prefix=~/env/ssl --openssldir=~/env/openssldir shared
+        && make && make test && make install
+]]
